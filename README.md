@@ -1,70 +1,201 @@
-# Getting Started with Create React App
+# NeuroSync AI – Multi-Agent Personal Assistant
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+NeuroSync AI is a Generative AI-powered Multi-Agent Personal Assistant developed using React, FastAPI, OpenAI APIs, and ChromaDB. The system uses intelligent task routing and specialized AI agents to perform different operations such as research assistance, code support, email generation, and conversational interactions.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Key Features
 
-### `npm start`
+- Multi-Agent Architecture
+- Research Agent for information assistance
+- Coding Agent for programming support
+- Email Agent for professional email generation
+- Intelligent Coordinator Agent for task routing
+- AI Memory Integration using ChromaDB
+- Conversational Chat Interface
+- OpenAI API Integration
+- Modern Dashboard Interface
+- Modular Backend Architecture
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## System Architecture
 
-### `npm test`
+```
+User Interface (React)
+          │
+          ▼
+FastAPI Backend API
+          │
+          ▼
+Coordinator Agent
+   ┌────────┼─────────┐
+   ▼        ▼         ▼
+Research  Coding    Email
+ Agent     Agent     Agent
+          │
+          ▼
+      OpenAI API
+          │
+          ▼
+     ChromaDB Memory
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Technology Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Frontend
+- React.js
+- CSS
+- Axios
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Backend
+- Python
+- FastAPI
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Generative AI
+- OpenAI API
+- Prompt Engineering
+- Multi-Agent Routing
 
-### `npm run eject`
+### Memory Layer
+- ChromaDB
+- Sentence Transformers
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Project Structure
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+neurosync-ai/
+│
+├── backend/
+│   ├── agents/
+│   │   ├── coding_agent.py
+│   │   ├── email_agent.py
+│   │   ├── research_agent.py
+│   │   └── coordinator.py
+│   │
+│   ├── memory/
+│   │   └── memory_store.py
+│   │
+│   ├── services/
+│   │   └── openai_service.py
+│   │
+│   ├── main.py
+│   ├── requirements.txt
+│   └── .env.example
+│
+├── frontend/
+│   ├── public/
+│   └── src/
+│
+├── screenshots/
+│   └── dashboard.png
+│
+├── README.md
+└── .gitignore
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## Installation and Setup
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Clone Repository
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+git clone https://github.com/sukanya-soppihiremath/neurosync-ai.git
 
-### Code Splitting
+cd neurosync-ai
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+### Backend Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+cd backend
 
-### Making a Progressive Web App
+python -m venv venv
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# Windows
+venv\Scripts\activate
 
-### Advanced Configuration
+pip install -r requirements.txt
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+uvicorn main:app --reload
+```
 
-### Deployment
+Backend URL:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```
+http://127.0.0.1:8000
+```
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Frontend Setup
+
+```
+cd frontend
+
+npm install
+
+npm start
+```
+
+Frontend URL:
+
+```
+http://localhost:3000
+```
+
+---
+
+## Environment Variables
+
+Create a `.env` file inside backend:
+
+```env
+OPENAI_API_KEY=YOUR_OPENAI_API_KEY
+```
+
+Upload only:
+
+```
+.env.example
+```
+
+Example:
+
+```env
+OPENAI_API_KEY=YOUR_KEY
+```
+
+---
+
+## Future Enhancements
+
+- Voice Assistant Integration
+- LangGraph Workflow Orchestration
+- CrewAI Agents
+- Retrieval Augmented Generation (RAG)
+- Authentication and Authorization
+- Task Scheduling System
+- Calendar Integration
+- Autonomous Agent Workflows
+- WhatsApp Integration
+
+---
+
+## Resume Description
+
+Developed **NeuroSync AI**, a Multi-Agent Generative AI Personal Assistant using React, FastAPI, OpenAI APIs, and ChromaDB with intelligent task routing, modular AI agents, conversational interface, and memory integration.
+
+---
+
+## Author
+
+**Sukanya**
+
+Generative AI | Full Stack Development | Multi-Agent Systems
